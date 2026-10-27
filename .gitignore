@@ -1,0 +1,20 @@
+# Rust
+/target
+
+# Secrets and per-developer settings (template: .env.example)
+.env
+.env.*
+!.env.example
+.dev.vars*
+
+# Wrangler / miniflare local state
+.wrangler/
+**/.wrangler/
+
+# Node
+node_modules/
+
+# OS / editors
+.DS_Store
+.idea/
+.vscode/
