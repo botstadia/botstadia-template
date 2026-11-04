@@ -18,3 +18,8 @@ node_modules/
 .DS_Store
 .idea/
 .vscode/
+
+# Bots: build output and Python environments
+out/
+.venv/
+__pycache__/
