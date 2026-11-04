@@ -1,0 +1,52 @@
+# The starter bots' everyday commands, for all three at once or one with
+# BOT=policy|rust|c. Each is a plain `botstadia` command run in the bot's
+# folder: see TUTORIAL.md for what they do.
+version: "3"
+
+vars:
+  BOTS: policy rust c
+  BOT: '{{.BOT | default ""}}'
+  ONLY: '{{if .BOT}}{{.BOT}}{{else}}{{.BOTS}}{{end}}'
+
+tasks:
+  doctor:
+    desc: "Check this machine is ready"
+    cmds:
+      - botstadia doctor
+
+  setup:
+    desc: "Add every toolchain the bots need (Rust, wasi-sdk for C, Python training for the policy)"
+    cmds:
+      - botstadia setup --lang rust
+      - botstadia setup --lang c
+      - cd bots/policy && botstadia setup --lang policy
+
+  train:
+    desc: "Train the policy bot (STEPS=…, default 1,000,000): imitation from the arena's scripted bot, then PPO"
+    dir: bots/policy
+    cmds:
+      - .venv/bin/python train.py --steps {{.STEPS | default "1000000"}}
+
+  build:
+    desc: "Build the bots into out/<name>.zip (BOT=… for one)"
+    cmds:
+      - for: { var: ONLY }
+        cmd: cd bots/{{.ITEM}} && botstadia build
+
+  check:
+    desc: "Run upload verification's checks locally (BOT=… for one)"
+    cmds:
+      - for: { var: ONLY }
+        cmd: cd bots/{{.ITEM}} && botstadia check
+
+  bench:
+    desc: "Win rates and ratings against the arena's published bots (BOT=… for one, SEEDS=… per opponent)"
+    cmds:
+      - for: { var: ONLY }
+        cmd: cd bots/{{.ITEM}} && botstadia bench --seeds {{.SEEDS | default "20"}}
+
+  run:
+    desc: "One local session with replay and metrics (BOT=rust by default, AGAINST=scripted, SEED=1)"
+    dir: 'bots/{{.BOT | default "rust"}}'
+    cmds:
+      - botstadia run --against {{.AGAINST | default "scripted"}} --seed {{.SEED | default "1"}}

@@ -1,0 +1,7 @@
+name = "my-policy"
+arena = "dance-off"
+kind = "policy"
+arena_version = "0.1.0"
+arena_digest = "sha256-7d2975be045291517e14514a059054ae5d40dbd119e0072da2be8844b136f61f"
+payload_schema_version = 1
+model = "policy.onnx"
