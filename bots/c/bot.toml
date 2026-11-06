@@ -1,6 +1,6 @@
 name = "my-c"
 arena = "dance-off"
 kind = "c"
-arena_version = "0.1.0"
-arena_digest = "sha256-7d2975be045291517e14514a059054ae5d40dbd119e0072da2be8844b136f61f"
-payload_schema_version = 1
+arena_version = "0.2.0"
+arena_digest = "sha256-b4e6f0c685af7f09bdcb8ab2bfe5baa43e9da659a6253d7276c8f11ac43fbc2c"
+payload_schema_version = 2

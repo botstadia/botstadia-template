@@ -17,6 +17,8 @@ checksum = "3ded4057c258ba199e2d26386d3af3780957ecaee6c4ef4041c6b4b8b97c0b06"
 [[package]]
 name = "botstadia-interface"
 version = "0.2.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "02b0da05b50a001756b729d924461aac8b55276daa17597df38b892381210db1"
 dependencies = [
  "postcard",
  "serde",
@@ -388,87 +390,3 @@ name = "zmij"
 version = "1.0.23"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "29666d0abbfad1e3dc4dcf6144730dd3a3ab225bbbdac83319345b1b44ccfc1b"
-
-[[patch.unused]]
-name = "awsm-audio-player"
-version = "2.6.0"
-
-[[patch.unused]]
-name = "awsm-audio-schema"
-version = "2.6.0"
-
-[[patch.unused]]
-name = "awsm-audio-worklet"
-version = "2.6.0"
-
-[[patch.unused]]
-name = "awsm-renderer"
-version = "0.39.1"
-
-[[patch.unused]]
-name = "awsm-renderer-codec-basis"
-version = "0.39.1"
-
-[[patch.unused]]
-name = "awsm-renderer-codec-meshopt"
-version = "0.39.1"
-
-[[patch.unused]]
-name = "awsm-renderer-core"
-version = "0.39.1"
-
-[[patch.unused]]
-name = "awsm-renderer-curves"
-version = "0.39.1"
-
-[[patch.unused]]
-name = "awsm-renderer-geometry"
-version = "0.39.1"
-
-[[patch.unused]]
-name = "awsm-renderer-glb-export"
-version = "0.39.1"
-
-[[patch.unused]]
-name = "awsm-renderer-gltf"
-version = "0.39.1"
-
-[[patch.unused]]
-name = "awsm-renderer-gltf-convert"
-version = "0.39.1"
-
-[[patch.unused]]
-name = "awsm-renderer-lod-bake"
-version = "0.39.1"
-
-[[patch.unused]]
-name = "awsm-renderer-materials"
-version = "0.39.1"
-
-[[patch.unused]]
-name = "awsm-renderer-meshgen"
-version = "0.39.1"
-
-[[patch.unused]]
-name = "awsm-renderer-mujoco-format"
-version = "0.39.1"
-
-[[patch.unused]]
-name = "awsm-renderer-particles"
-version = "0.39.1"
-
-[[patch.unused]]
-name = "awsm-renderer-scene"
-version = "0.39.1"
-
-[[patch.unused]]
-name = "awsm-renderer-scene-loader"
-version = "0.39.1"
-
-[[patch.unused]]
-name = "awsm-renderer-tangents"
-version = "0.39.1"
-
-[[patch.unused]]
-name = "botstadia-host"
-version = "0.1.0"
