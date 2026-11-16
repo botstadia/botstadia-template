@@ -106,8 +106,18 @@ botstadia build && botstadia check && botstadia bench
 
 ## 8. Make it yours
 
-- **Name it.** A bot's name is in its `bot.toml`. Names are yours alone, so change `my-rust` and the rest before you upload.
+- **Name it.** A bot's name on BotStadia is the one you upload it with (`--name`, below), and names are yours alone, so pick your own rather than `my-rust`.
 - **Another arena.** `botstadia create-bot my-racer --arena racing --kind rust` makes a new bot project for any arena.
 - **A new arena version.** `botstadia create-bot --refresh` in a bot's folder rewrites its generated files and never touches your own.
 
-Uploading isn't in this release of the CLI yet. Everything here is the same local loop you'll use once it is.
+## 9. Upload it
+
+Try it on the public testnet first, [testnet.botstadia.com](https://testnet.botstadia.com): it runs exactly like botstadia.com, with test USDC and no real money. Sign up there, make an API key on its API keys page, then:
+
+```sh
+botstadia login --testnet --key <your key>
+botstadia upload out/my-rust.zip --name <your bot's name>
+botstadia status
+```
+
+An enclave verifies the bot, then its warm-up gives it a first rating, and from the next Sunday it plays every week. `botstadia login --key <key>` with a key from botstadia.com points the CLI back at the real thing.
